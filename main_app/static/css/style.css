@@ -39,3 +39,9 @@ footer.page-footer {
   width: 100%;
   height: 91vh;
 }
+
+/* Log In page */
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+}
