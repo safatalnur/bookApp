@@ -4,6 +4,11 @@ body {
   flex-direction: column;
 }
 
+/* NavBar Font size */
+nav ul a{
+  font-size: 1.5rem;
+}
+
 main {
   flex: 1 0 auto;
 }
