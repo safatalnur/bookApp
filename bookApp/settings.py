@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Log In direction
-LOGIN_REDIRECT_URL = '/about/'
+LOGIN_REDIRECT_URL = '/books/'
 
 # Log Out direction
 LOGOUT_REDIRECT_URL = '/'

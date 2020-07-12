@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1 class="center">Awesome Children Books</h1>
+
+<div class="row">
+    {% for book in books %}
+        <div class="col s6">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="{% static 'assets/001-HIDE-AND-SEEK-free-childrens-books-1.jpg' %}" alt="Testing Image">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <span class="card-title">{{ book.title }}</span>
+                        <p>Author: {{ book.author }}</p>
+                        <p>Illustrated By: {{ book.illustrated }}</p>
+                        <p>Age Group: {{ book.age }}</p>
+                    </div>
+                    <a href="{% url 'detail' book.id %}" class="waves-effect waves-light btn">Details</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
