@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . import views
 from .models import Book
+from django.views.generic.edit import CreateView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
@@ -19,6 +20,11 @@ from django.contrib.auth.forms import UserCreationForm
 # ]
 
 # Create your views here.
+
+class BookCreate(CreateView):
+    model = Book
+    fields = '__all__'
+    success_url = '/books/'
 
 def home(request):
     return render(request, 'home.html')
