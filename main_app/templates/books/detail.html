@@ -16,6 +16,10 @@
                         <p>Illustrated By: {{ book.illustrated }}</p>
                         <p>Age Group: {{ book.age }}</p>
                     </div>
+                    <div class="card-action">
+                        <a href="{% url 'books_update' book.id %}">Edit</a>
+                        <a href="{% url 'books_delete' book.id %}" >Delete</a>
+                    </div>        
                 </div>
             </div>
         </div>

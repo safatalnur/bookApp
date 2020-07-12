@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from . import views
 from .models import Book
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
@@ -24,6 +24,14 @@ from django.contrib.auth.forms import UserCreationForm
 class BookCreate(CreateView):
     model = Book
     fields = '__all__'
+    success_url = '/books/'
+
+class BookUpdate(UpdateView):
+    model = Book
+    fields = '__all__'
+
+class BookDelete(DeleteView):
+    model = Book
     success_url = '/books/'
 
 def home(request):
