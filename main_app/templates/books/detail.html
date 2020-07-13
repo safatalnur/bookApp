@@ -29,6 +29,10 @@
 <hr>
 <form action="{% url 'like_book' book.pk %}" method="POST">
     {% csrf_token %}
-    <button type="submit" name="book_id", value={{ book.id }} class="btn btn-primary">Like</button> - {{ total_likes }} Likes
+    {% if liked %}
+        <button type="submit" name="book_id", value={{ book.id }} class="waves-effect waves-light red darker-4 btn">Dislike</button> - {{ total_likes }} Likes
+    {% else %}
+        <button type="submit" name="book_id", value={{ book.id }} class="waves-effect waves-light btn">Like</button> - {{ total_likes }} Likes
+    {% endif %}
 </form>
 {% endblock %}

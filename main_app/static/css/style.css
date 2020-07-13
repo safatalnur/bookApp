@@ -9,6 +9,10 @@ nav ul a{
   font-size: 1.5rem;
 }
 
+nav ul li {
+  font-size: 1.5rem;
+}
+
 main {
   flex: 1 0 auto;
 }

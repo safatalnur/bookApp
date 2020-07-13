@@ -9,7 +9,7 @@ urlpatterns = [
     #View for a book in details
     path('books/<int:pk>/', views.books_detail, name='detail'),
     # View for like individual book
-    path('like/<int:pk>', LikeView, name='like_book'),
+    path('like/<int:pk>', LikeView, name='like_book'),   
     # View to create a new book
     path('books/create/', views.BookCreate.as_view(), name='books_create'),
     # View to edit a book

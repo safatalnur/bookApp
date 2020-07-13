@@ -45,9 +45,13 @@ def books_index(request):
 
 def books_detail(request, pk):
     book = Book.objects.get(id=pk)
+    liked = False
+    if book.likes.filter(id=request.user.id).exists():
+        liked = True
 
     context = {
         'book': book,
+        'liked': liked,
         'total_likes': book.total_likes(),
     }
     
@@ -55,7 +59,14 @@ def books_detail(request, pk):
 
 def LikeView(request, pk):
     book = get_object_or_404(Book, id=request.POST.get('book_id'))
-    book.likes.add(request.user)
+    liked = False
+    if book.likes.filter(id=request.user.id).exists():
+        book.likes.remove(request.user)
+        liked = False
+    else:
+        book.likes.add(request.user)
+        liked=True
+
     return HttpResponseRedirect(reverse(books_detail, args=[str(pk)]))
 
 def signup(request):
