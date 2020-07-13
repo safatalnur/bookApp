@@ -25,12 +25,14 @@ from django.urls import reverse
 
 class BookCreate(CreateView):
     model = Book
-    fields = '__all__'
+    fields = ['title', 'author', 'illustrated', 'age']
     success_url = '/books/'
 
 class BookUpdate(UpdateView):
     model = Book
-    fields = '__all__'
+    fields = ['title', 'author', 'illustrated', 'age']
+    success_url = '/books/'
+
 
 class BookDelete(DeleteView):
     model = Book

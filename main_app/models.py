@@ -13,8 +13,8 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse('detail', kwargs={ 'book_id': self.id })
+    # def get_absolute_url(self):
+    #     return reverse('detail', kwargs={ 'book_id': self.id })
 
     def total_likes(self):
         return self.likes.count()
