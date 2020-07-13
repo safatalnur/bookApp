@@ -1,12 +1,15 @@
 from django.urls import path, include
 from . import views
+from .views import LikeView
 
 urlpatterns = [
     path('', views.home, name='home'),
     #View for all books
     path('books/', views.books_index, name='index'),
     #View for a book in details
-    path('books/<int:book_id>/', views.books_detail, name='detail'),
+    path('books/<int:pk>/', views.books_detail, name='detail'),
+    # View for like individual book
+    path('like/<int:pk>', LikeView, name='like_book'),
     # View to create a new book
     path('books/create/', views.BookCreate.as_view(), name='books_create'),
     # View to edit a book
