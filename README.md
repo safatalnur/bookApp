@@ -22,9 +22,13 @@
 * [Trello Board](https://trello.com/b/JGXywzXC)
 * Entity Relationship Diagram (ERD)![](./screenshots/BookApp.png)
 * Wire Frame Design
+* Landing Page
 ![](./wireframe/LandingPage.png)
+* All Books page
 ![](./wireframe/Allpages.png)
+* Add New Book page
 ![](./wireframe/AddPage.png)
+* pdf file page
 ![](./wireframe/pdfpage.png)
 
 ## Features
@@ -63,7 +67,7 @@ class Book(models.Model):
 ```
 ## Screenshots
 * Add Page Screen shot:
-1[](./screenshots/AddPage.png)
+![](./screenshots/AddPage.png)
 
 ## Environment
 * macOS catalina 10.15.5
@@ -74,7 +78,7 @@ class Book(models.Model):
 * Upload assets to amazon s3
 
 ## Author
-* **Safat Alnur(https://github.com/safatalnur) 
+* Safat Alnur(https://github.com/safatalnur) 
 
 ## License
 (MIT)
