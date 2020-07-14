@@ -19,7 +19,7 @@
                     <div class="card-action">
                         <a href="{% url 'books_update' pk=book.id %}">Edit</a>
                         <a href="{% url 'books_delete' book.id %}" >Delete</a>
-                        <a href="{{ book.bookPdf.url }}" class="btn btn-primary" target="_blank">Read The Book</a>
+                        <a href="{{ book.bookPdf.url }}" class="btn btn-primary right" target="_blank">Read The Book</a>
                     </div>        
                 </div>
             </div>
@@ -38,5 +38,5 @@
 </form>
 
 <br><br>
-<span class="grey">{{  book.title }}</span> book is being like by {{ total_likes }} people. 
+<span class="grey">{{  book.title }}</span> book is being liked by {{ total_likes }} people. 
 {% endblock %}

@@ -20,7 +20,7 @@
         </ul>
         <ul class="right">
           {% if user.is_authenticated %}
-            <li><a href="">User: {{ request.user.username }}</a></li>
+            <li><a href="">Hello, {{ request.user.username }}</a></li>
             <li><a href="{% url 'index' %}"> All Books</a></li>
             <li><a href="{% url 'create' %}" > Add New Book</a></li>
             <li><a href="{% url 'logout' %}" ><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
