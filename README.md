@@ -16,6 +16,7 @@
 4. Synchronize database ```$ python3 manage.py migrate```
 5. Run the server ```$ python3 manage.py runserver```
 6. Browse to ```localhost:8000```
+7. [Heroku link](https://safatbookapp.herokuapp.com/)
 
 
 ## Planning Stage
