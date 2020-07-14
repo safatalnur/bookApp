@@ -9,6 +9,7 @@ class Book(models.Model):
     illustrated = models.CharField(max_length = 100)
     age = models.CharField(max_length = 100)
     likes = models.ManyToManyField(User, related_name='book_posts')
+    bookImage = models.ImageField(default='default.jpg', blank=True)
 
     def __str__(self):
         return self.title

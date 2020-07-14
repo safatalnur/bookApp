@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from . import views
+from . import views, forms
 from .models import Book
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
@@ -23,14 +23,21 @@ from django.urls import reverse
 
 # Create your views here.
 
-class BookCreate(CreateView):
-    model = Book
-    fields = ['title', 'author', 'illustrated', 'age']
-    success_url = '/books/'
+
+def book_create(request):
+    if request.method == 'POST':
+        form = forms.CreateBook(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/books/')
+    else:
+        form = forms.CreateBook()
+    return render(request, 'books/book_create.html', {'form': form})
 
 class BookUpdate(UpdateView):
     model = Book
-    fields = ['title', 'author', 'illustrated', 'age']
+    template_name = 'books/book_create.html'
+    fields = ['title', 'author', 'illustrated', 'age', 'bookImage']
     success_url = '/books/'
 
 

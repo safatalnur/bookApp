@@ -11,7 +11,7 @@ urlpatterns = [
     # View for like individual book
     path('like/<int:pk>', LikeView, name='like_book'),   
     # View to create a new book
-    path('books/create/', views.BookCreate.as_view(), name='books_create'),
+    path('books/create/', views.book_create, name='create'),
     # View to edit a book
     path('books/<int:pk>/update/', views.BookUpdate.as_view(), name='books_update'),
     # To delete a book
