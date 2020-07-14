@@ -54,3 +54,7 @@ footer.page-footer {
   display: flex;
   flex-direction: column;
 }
+
+.grey {
+  padding: 20px;
+}
