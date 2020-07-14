@@ -37,7 +37,7 @@ def book_create(request):
 class BookUpdate(UpdateView):
     model = Book
     template_name = 'books/book_create.html'
-    fields = ['title', 'author', 'illustrated', 'age', 'bookImage']
+    fields = ['title', 'author', 'illustrated', 'age', 'bookImage', 'bookPdf']
     success_url = '/books/'
 
 
